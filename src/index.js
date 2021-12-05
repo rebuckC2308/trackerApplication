@@ -1,12 +1,16 @@
+require("./models/User");
 const express = require("express");
 const mongoose = require("mongoose");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-const mongoUri =
-  //URL removed for commit
+app.use(express.json());
+app.use(authRoutes);
 
-  mongoose.connect(mongoUri);
+const mongoUri //removed for commit
+
+mongoose.connect(mongoUri);
 mongoose.connection.on("connected", () => {
   console.log("Connected to Mongo instance");
 });
