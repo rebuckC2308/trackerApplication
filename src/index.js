@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(authRoutes);
 
-const mongoUri //removed for commit
+const mongoUri
 
 mongoose.connect(mongoUri);
 mongoose.connection.on("connected", () => {
